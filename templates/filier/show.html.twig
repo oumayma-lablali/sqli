@@ -1,0 +1,26 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}Filier{% endblock %}
+
+{% block body %}
+    <h1>Filier</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ filier.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ filier.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_filier_index') }}" class="btn btn-secondary">back to list</a>
+
+    <a href="{{ path('app_filier_edit', {'id': filier.id}) }}" class="btn btn-warning">edit</a>
+
+    {{ include('filier/_delete_form.html.twig') }}
+{% endblock %}

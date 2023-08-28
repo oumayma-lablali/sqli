@@ -1,0 +1,11 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}New Enseignant{% endblock %}
+
+{% block body %}
+    <h1>Create new Enseignant</h1>
+
+    {{ include('enseignant/_form.html.twig') }}
+
+    <a href="{{ path('app_enseignant_index') }}" class="btn btn-secondary">back to list</a>
+{% endblock %}

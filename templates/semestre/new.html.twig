@@ -1,0 +1,11 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}add Semestre{% endblock %}
+
+{% block body %}
+    <h1>Create a new Semestre</h1>
+
+    {{ include('semestre/_form.html.twig') }}
+
+    <a href="{{ path('app_semestre_index') }}" class="btn btn-secondary">back to list</a>
+{% endblock %}

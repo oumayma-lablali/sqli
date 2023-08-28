@@ -1,0 +1,40 @@
+ROLE_USER: Usuario
+ROLE_APOGE: APOGE
+ROLE_ADMIN: Administrador
+ROLE_PROF: Profesor
+ROLE_ETUDIANT: Estudiante
+ROLE_CHEF: Jefe de Rama
+
+Dashboard: Gestión de exámenes
+Etudiants: Estudiantes
+Filier: Ramas
+Users: Usuarios
+Etudiant: Estudiante
+Filiere: Rama
+Enseignant: Profesora
+Module: Módulo
+Nom: Nombre
+Prenom: Nombre de pila
+Note: Nota
+Adresse: Dirección
+Observation: Comentarios
+User: Usuario
+Is Verified: Está verificado
+Email: Correo electrónico
+Username: Nombre de usuario
+Local: Local
+
+security:
+  reset-password: Recuperar contraseña
+  forgetten-password: Olbido mi contraseña 
+  enter-email: Entre su correo electrónico
+  send-email:  Envíe el enlace para recuperar la contraseña
+  email: Correo electrónico
+  password: Contraseña
+  username: Apellido y nombre del usuario
+  remember-me: Recuérdame
+  login: Iniciar sesión
+  dont-have-account: No tengo cuenta
+  register: Registrarse
+  accept: Acepto todos
+  terms: los términos de uso

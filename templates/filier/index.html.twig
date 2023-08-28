@@ -1,0 +1,35 @@
+{% extends 'home.html.twig' %}
+
+{% block title %}Filiere{% endblock %}
+
+{% block body %}
+    <h1>Filiere</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for filier in filiers %}
+            <tr>
+                <td>{{ filier.id }}</td>
+                <td>{{ filier.nom }}</td>
+                <td>
+                    <a href="{{ path('app_filier_show', {'id': filier.id}) }}" class="btn btn-info">show</a>
+                    <a href="{{ path('app_filier_edit', {'id': filier.id}) }}" class="btn btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_filier_new') }}" class="btn btn-success">Create new</a>
+{% endblock %}
