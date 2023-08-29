@@ -18,10 +18,12 @@
             <tr>
                 <td>{{ filier.id }}</td>
                 <td>{{ filier.nom }}</td>
+                {% if is_granted("ROLE_ADMIN") %}
                 <td>
                     <a href="{{ path('app_filier_show', {'id': filier.id}) }}" class="btn btn-info">show</a>
                     <a href="{{ path('app_filier_edit', {'id': filier.id}) }}" class="btn btn-warning">edit</a>
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
@@ -31,5 +33,7 @@
         </tbody>
     </table>
 
+    {% if is_granted("ROLE_ADMIN") %}
     <a href="{{ path('app_filier_new') }}" class="btn btn-success">Create new</a>
+    {% endif %}
 {% endblock %}

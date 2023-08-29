@@ -25,10 +25,12 @@
             </tr>
         </tbody>
     </table>
+    {% if is_granted("ROLE_ADMIN") %}
 
     <a href="{{ path('app_enseignant_index') }}" class="btn btn-secondary">back to list</a>
 
     <a href="{{ path('app_enseignant_edit', {'id': enseignant.id}) }}" class="btn btn-warning">edit</a>
 
     {{ include('enseignant/_delete_form.html.twig') }}
+    {% endif %}
 {% endblock %}

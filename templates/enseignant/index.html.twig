@@ -12,7 +12,9 @@
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Cin</th>
+                {% if is_granted("ROLE_ADMIN") %}
                 <th>actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -22,10 +24,12 @@
                 <td>{{ enseignant.nom }}</td>
                 <td>{{ enseignant.prenom }}</td>
                 <td>{{ enseignant.cin }}</td>
+                {% if is_granted("ROLE_ADMIN") %}
                 <td>
                     <a href="{{ path('app_enseignant_show', {'id': enseignant.id}) }}" class="btn btn-info">show</a>
                     <a href="{{ path('app_enseignant_edit', {'id': enseignant.id}) }}" class="btn btn-warning">edit</a>
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
@@ -35,5 +39,7 @@
         </tbody>
     </table>
 
+    {% if is_granted("ROLE_ADMIN") %}
     <a href="{{ path('app_enseignant_new') }}" class="btn btn-success">Create new</a>
+    {% endif %}
 {% endblock %}

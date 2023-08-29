@@ -14,7 +14,9 @@
                 <th>Module</th>
                 <th>Note</th>
                 <th>Observation</th>
+                {% if is_granted("ROLE_ADMIN") %}
                 <th>actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -26,10 +28,12 @@
                 <td>{{ note.module.nom }}</td>
                 <td>{{ note.note }}</td>
                 <td>{{ note.observation }}</td>
+                {% if is_granted("ROLE_ADMIN") %}
                 <td>
                     <a href="{{ path('app_note_show', {'id': note.id}) }}" class="btn btn-info">show</a>
                     <a href="{{ path('app_note_edit', {'id': note.id}) }}" class="btn btn-warning">edit</a>
                 </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>
@@ -39,5 +43,7 @@
         </tbody>
     </table>
 
+    {% if is_granted("ROLE_ADMIN") %}
     <a href="{{ path('app_note_new') }}" class="btn btn-success">Create new</a>
+    {% endif %}
 {% endblock %}
